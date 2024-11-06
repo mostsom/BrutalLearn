@@ -9,7 +9,7 @@ class EasyAns{
         this.quation = quation;
         this.ansvers = ansvers;
         this.rightAns = rightAns;
-        this.chosen = 0;
+        this.chosen = null;
         this.buttons = []
         for (let index = 0; index < this.ansvers.length; index++) {
             var s = document.createElement('button')
@@ -24,7 +24,9 @@ class EasyAns{
     show(quationid,divid){
         var nameQuation = document.getElementById(quationid);
         var divforAns = document.getElementById(divid);
+        nameQuation.style.fontSize = (1000/this.quation.length)+30+'px'
         nameQuation.innerHTML = this.quation;
+
         for (let index = 0; index < this.buttons.length; index++) {
             divforAns.appendChild(this.buttons[index])            
         }
@@ -80,7 +82,7 @@ function main(){
     base.push(testIndex+'. test','A)','B)','C)','D)')
     for (var index = 0; index < base.length; index++) {
         if(base[index].search(qIndex+'.') == 0){
-            quation = base[index].split(' ')[1]
+            quation = base[index]
             for (var i = 0; i < ansvers.length; i++) {
                 for (var j = 0; j < ansvers[i].length; j++) {
                     if(ansvers[i][j] == "*"){
@@ -186,7 +188,7 @@ function finish(){
             wrongAns+=1;
         }
     }
-    tctext3.value ='Your score is: '+ rightAns/(rightAns+wrongAns)*100 + '%'
+    tctext3.value ='Your score is: '+ Math.round(rightAns/easyA.length*100) + '% out of 100%';
 }
 var em = window.localStorage.getItem('email');
 var ems = window.localStorage.getItem('emails');

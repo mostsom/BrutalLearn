@@ -6,58 +6,7 @@
     cursor: none;
     -webkit-user-drag: none;
 }
-#tctext3{
-    font-size: 20px;
-}
-#Block button{
-    color: black;
-    padding: 10px;
-    font-size: 30px;
-}
-#playTestName{
-    color: black;
-    -webkit-text-fill-color: currentColor;
-}
-#PlayDialog {
-    color: black;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: -40px;
-    width: 100%;
-    height: 600px;
-    overflow: auto;
-    background-color: rgb(255, 255, 255);
-}
-#tctext2::placeholder{
-    text-align: center;
-}
-#TestBlock{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-#Block{
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
-    justify-content: space-between;
-}
-#StatBlock{
-    margin-left: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
 .tctext{
-    resize: none;
     color: white;
     border: none;
     outline: none;
@@ -65,9 +14,13 @@
     background-color:#191D1A;
     -webkit-text-fill-color: currentColor;
 }
+#TeacherBlock{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .TestCreate{
-    margin-right: 50px;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-content: center;
     align-items: center;
@@ -189,7 +142,7 @@
     margin-top: -240px;
 }
 body{
-    overflow:hidden;
+    overflow:auto;
     user-select: none;
     font-family: "Inter", sans-serif;
     font-weight: 400;
@@ -338,22 +291,18 @@ header nav ul li.log_reg:hover{
 .hero--info{
     user-select: none;
     width: 1251px;
-    height: 100px;
     display: flex;
-    margin-top: 50px;
+    margin-top: 30px;
     padding-bottom: 60px;
     flex-direction: column;
     align-items: center;
     font-family: Kdam Thmor Pro;
-    font-size: 52px;
+    font-size: 20px;
     z-index: 1;
-    background: linear-gradient(90deg, rgba(255,255,255,1) 40%, rgba(71,235,84,1) 85%);
     background-clip: text;
-    filter: drop-shadow(0px 0px 1px white);
     animation: enterBT 2s;
 }
 #startChallengeBtn{
-    
     background-color: rgb(255, 255, 255);
     border: none;
     border-radius: 13px;
@@ -506,21 +455,19 @@ input{
     background: white;
     color: black;
 }
-.testControl{
-    position: absolute;
+.versions{
+    width: 100%;
     display: flex;
-    bottom: 20px;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    flex-direction: row;
 }
-.quationName{
-    border: 1px solid black;
-    width: 80%;
+.versions .PremiumV{
     text-align: center;
+    width: 50%;
+    border: 1px solid black;
 }
-.finishBtn{
-    margin-left: 100px;
+.versions .FreeV{
+    text-align: center;
+    width: 50%;
+    border: 1px solid black;
 }
 @keyframes enterX {
     from {

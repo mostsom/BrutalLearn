@@ -1,7 +1,8 @@
 var nameAcc = document.getElementById('loginregister');
 var logOut = document.getElementById('logout');
 var email = window.localStorage.getItem('email')
-
+var s = document.getElementsByClassName('hero--info')[0];
+s.style.width = window.innerWidth*0.9+"px";
 setTimeout(()=>{
     if(!email){
         nameAcc.innerHTML = 'Login / Register'

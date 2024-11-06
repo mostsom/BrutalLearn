@@ -202,3 +202,6 @@ window.onload = () =>{
     }
     update()
 }
+function startS() {
+    document.getElementById('loginregister').click()
+}
