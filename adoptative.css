@@ -1,0 +1,50 @@
+@media (max-width:1461px) {
+    header .navBtn{
+        margin:0px 0px 0px 20px;
+    }
+    #Block{
+        flex-direction: column;
+    }
+    .TestCreate{
+        margin-right: 0;
+    }
+    #StatBlock{
+        margin-left: 0;
+    }
+}
+@media (max-width:1378px) {
+    #startChallengeBtn, .icon_arrow{
+        display: none;
+    }
+}
+@media (max-width:902px) {
+    .logoImg{
+        position: absolute;
+        top: 1px;
+    }
+    .logo{
+        padding-left: 100px;
+        position: absolute;
+        top: 40px;
+    }
+    header{
+        padding-top: 120px;
+    }
+    .bachGg{
+        position: fixed;
+    }
+}
+@media (max-width:752px) {
+    .hero--info{
+        font-size: 42px;
+    }
+}
+@media (max-width:575px) {
+    #langBtn, .icon_down, .icon_lang{
+        display: none;
+    }
+
+    .navBtn{
+        margin: 0px 0px 0px 5px;
+    }
+}

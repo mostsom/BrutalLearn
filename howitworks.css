@@ -6,6 +6,9 @@
     cursor: none;
     -webkit-user-drag: none;
 }
+.blur-5{
+    filter: blur(5px);
+}
 .tctext{
     color: white;
     border: none;
@@ -157,7 +160,7 @@ body{
     pointer-events: none;
 }
 .bachGg{
-    position: absolute;
+    position: fixed;
     top: 0px;
     width: 100%;
     height:100%;

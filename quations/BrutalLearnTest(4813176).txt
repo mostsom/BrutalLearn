@@ -1,1 +1,88 @@
-MS4gV2UgbG9va2VkIHVwIGF0IGFsbCB0aGUgc3RhcnMgaW4gX19fIHNreS4kMi4gSGUgd2FzIGVsZWN0ZWQgX19fIFByZXNpZGVudCBtYW55IHllYXJzIGFnby4kMy4gV2Ugd2VudCB0aGVyZSBieSBfX18gY2FyLiQ0LiBXZSB0cmF2ZWxsZWQgdG8gUm9tZSBsYXN0IG1vbnRoIGFuZCBzdGF5ZWQgYXQgX19fIHZlcnkgY2hlYXAgaG90ZWwgdGhlcmUuIFdlIGRpZCBub3QgbGlrZSBfX18gaG90ZWwgdmVyeSBtdWNoLCBidXQgYWxsIG90aGVyIGhvdGVscyB3ZXJlIGFscmVhZHkgYm9va2VkLiQ1LiBIYXZlIHlvdSBnb3QgX19fIGhlYWRhY2hlPyQ2LiBIZSBzdGF5ZWQgYXQgX19fIEhpbHRvbiBIb3RlbC4kNy4gU2hlIGhhcyBzcGVudCBoZXIgbGlmZSBjYXJpbmcgZm9yIF9fXyBzaWNrLiQ4LiBfX18gdGVzdCB3YXMgbm90IGRpZmZpY3VsdC4gSSBhbnN3ZXJlZCBfX18gcXVlc3Rpb25zIHZlcnkgcXVpY2tseS4kOS4gSGUgaXMgY3VycmVudGx5IGluIF9fXyBwcmlzb24gZm9yIHRheCBmcmF1ZC4kMTAuIFRvbSBpcyBwYXJlbnRzIGhhdmUgYmVlbiBpbnZpdGVkIHRvIF9fXyBzY2hvb2wgYmVjYXVzZSB0aGUgcHJpbmNpcGFsIHdhbnRzIHRvIHNwZWFrIHRvIHRoZW0uQSkgLSQxMS4gQ2FuIHlvdSB0ZWxsIG1lIHdoZXJlIF9fXyByb29tIDI1IGlzLCBwbGVhc2U/JDEyLiBIZSBoYXMgdG8gd2VhciBfX18gdW5pZm9ybS4kMTMuIFdoYXQgZGlkIHlvdSBoYXZlIGZvciBfX18gZGlubmVyPyQxNC4gSSBlYXQgX19fIGFwcGxlIGV2ZXJ5IGRheSQxNS4gVGhlaXIgZmFtaWx5IGlzIGV4dHJlbWVseSBwb29yLCB0aGV5IGV2ZW4gaGF2ZSBfX18gbGl0dGxlIG1vbmV5IGZvciBmb29kLCBzbyB0aGV5IGFyZSBhbG1vc3Qgc3RhcnZpbmcuJDE2LiBfX18gVW5pdGVkIEtpbmdkb20gaXMgc2l0dWF0ZWQgb2ZmIHRoZSB3ZXN0IGNvYXN0IG9mIG1haW5sYW5kIEV1cm9wZS4kMTcuIEV2ZXJlc3QgaXMgdGhlIGhpZ2hlc3QgbW91bnRhaW4gaW4gdGhlIHdvcmxkLCBpbiB0aGUgcmFuZ2Ugb2YgbW91bnRhaW5zIGNhbGxlZCBfX18gSGltYWxheWFzLiQxOC4gV2hhdCBfX18gd29uZGVyZnVsIHN0b3J5ISQxOS4gR29vZCBtb3JuaW5nLCBfX18gY2hpbGRyZW4hJDIwLiBMZXQncyB3YXRjaCBfX18gVFYuJDIxLiBSb21lIGlzIHZlcnkgbG92ZWx5IGluIF9fXyBzcHJpbmcuJDIyLiBXaGljaCBpcyBfX18gdGFsbGVzdCBidWlsZGluZyBpbiB0aGlzIGNpdHk/JDIzLiBfX18gbW9yZSBkYW5nZXJvdXMgb3V0IHRyaXAgaXMsIF9fXyBtb3JlIEkgZW5qb3kgaXQuJDI0LiBJIGNhbWUgaW4gYW5kIHNhdCBkb3duIG9uIF9fXyBjaGFpciB3aGljaCB3YXMgdGhlIG5lYXJlc3QgdG8gdGhlIGRvb3IuJDI1LiBEbyB5b3UgdGFrZSBfX18gc3VnYXIgaW4geW91ciB0ZWE/JApBKSBhI0IpIC0jQykgdGhlfEEpIGEjQikgLSNDKSB0aGV8QSkgYSNCKSAtI0MpIHRoZXxBKSBhLCB0aGUjQikgYSwgYSNDKSB0aGUsIHRoZXxBKSAtI0IpIHRoZSNDKSBhfEEpIC0jQikgdGhlfEEpIHRoZSNCKSAtfEEpIFRoZSwgdGhlI0IpIFRoZSwgLSNDKSBBLCB0aGV8QSkgYSNCKSAtI0MpIHRoZXxCKSB0aGUjQykgYXxBKSB0aGUjQikgLXxBKSBhbiNCKSBhfEEpIC0jQikgdGhlfEEpIGFuI0IpIC0jQykgdGhlI0QpIGF8QSkgLSNCKSBhfEEpIFRoZSNCKSAtfEEpIHRoZSNCKSAtfEEpIGEjQikgLSNDKSB0aGV8QSkgdGhlI0IpIC18QSkgYSNCKSAtI0MpIHRoZXxBKSB0aGUgb3IgLSNCKSBvbmx5IHRoZSNDKSBvbmx5IC18QSkgdGhlI0IpIGF8QSkgLSwgLSNCKSBUaGUsIHRoZSNDKSBUaGUsIC18QSkgdGhlI0IpIGF8QSkgLSNCKSB0aGUjQykgYXwKMiAxIDEgMCAyIDEgMCAwIDEgMCAxIDEgMCAwIDAgMCAwIDAgMSAxIDAgMCAxIDAgMCA=
+1. We looked up at all the stars in ___ sky.
+A) a
+B) -
+C) the*
+2. He was elected ___ President many years ago.A) a
+B) -*
+C) the
+3. We went there by ___ car.A) a
+B) -*
+C) the
+4. We travelled to Rome last month and stayed at ___ very cheap hotel there. We did not like ___ hotel very much, but all other hotels were already booked.
+A) a, the*
+B) a, a
+C) the, the
+5. Have you got ___ headache?
+A) -
+B) the
+C) a*
+6. He stayed at ___ Hilton Hotel.
+A) -
+B) the*
+7. She has spent her life caring for ___ sick.
+A) the*
+B) -
+8. ___ test was not difficult. I answered ___ questions very quickly.
+A) The, the*
+B) The, -
+C) A, the
+9. He is currently in ___ prison for tax fraud.
+A) a
+B) -*
+C) the
+10. Tom is parents have been invited to ___ school because the principal wants to speak to them.
+A) -
+B) the*
+C) a
+11. Can you tell me where ___ room 25 is, please?
+A) the
+B) -*
+12. He has to wear ___ uniform.
+A) an
+B) a*
+13. What did you have for ___ dinner?
+A) -*
+B) the
+14. I eat ___ apple every day
+A) an*
+B) -
+C) the
+D) a
+15. Their family is extremely poor, they even have ___ little money for food, so they are almost starving.
+A) -*
+B) a
+16. ___ United Kingdom is situated off the west coast of mainland Europe.
+A) The*
+B) -
+17. Everest is the highest mountain in the world, in the range of mountains called ___ Himalayas.
+A) the*
+B) -
+18. What ___ wonderful story!
+A) a*
+B) -
+C) the
+19. Good morning, ___ children!
+A) the
+B) -*
+20. Let's watch ___ TV.
+A) a
+B) -*
+C) the
+21. Rome is very lovely in ___ spring.
+A) the or -*
+B) only the
+C) only -
+22. Which is ___ tallest building in this city?
+A) the*
+B) a
+23. ___ more dangerous out trip is, ___ more I enjoy it.
+A) -, -
+B) The, the*
+C) The, -
+24. I came in and sat down on ___ chair which was the nearest to the door.
+A) the*
+B) a
+25. Do you take ___ sugar in your tea?
+A) -*
+B) the
+C) a

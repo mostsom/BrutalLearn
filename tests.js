@@ -4,6 +4,96 @@ var PTd = document.getElementById('PlayDialog');
 var quationName = document.getElementById('playTestName');
 var quationAnsversDiv = document.getElementById('forAns');
 var easyA = []
+var exampleTest = `1. We looked up at all the stars in ___ sky.
+A) a
+B) -
+C) the*
+2. He was elected ___ President many years ago.
+A) a
+B) -*
+C) the
+3. We went there by ___ car.
+A) a
+B) -*
+C) the
+4. We travelled to Rome last month and stayed at ___ very cheap hotel there. We did not like ___ hotel very much, but all other hotels were already booked.
+A) a, the*
+B) a, a
+C) the, the
+5. Have you got ___ headache?
+A) -
+B) the
+C) a*
+6. He stayed at ___ Hilton Hotel.
+A) -
+B) the*
+7. She has spent her life caring for ___ sick.
+A) the*
+B) -
+8. ___ test was not difficult. I answered ___ questions very quickly.
+A) The, the*
+B) The, -
+C) A, the
+9. He is currently in ___ prison for tax fraud.
+A) a
+B) -*
+C) the
+10. Tom is parents have been invited to ___ school because the principal wants to speak to them.
+A) -
+B) the*
+C) a
+11. Can you tell me where ___ room 25 is, please?
+A) the
+B) -*
+12. He has to wear ___ uniform.
+A) an
+B) a*
+13. What did you have for ___ dinner?
+A) -*
+B) the
+14. I eat ___ apple every day
+A) an*
+B) -
+C) the
+D) a
+15. Their family is extremely poor, they even have ___ little money for food, so they are almost starving.
+A) -*
+B) a
+16. ___ United Kingdom is situated off the west coast of mainland Europe.
+A) The*
+B) -
+17. Everest is the highest mountain in the world, in the range of mountains called ___ Himalayas.
+A) the*
+B) -
+18. What ___ wonderful story!
+A) a*
+B) -
+C) the
+19. Good morning, ___ children!
+A) the
+B) -*
+20. Let's watch ___ TV.
+A) a
+B) -*
+C) the
+21. Rome is very lovely in ___ spring.
+A) the or -*
+B) only the
+C) only -
+22. Which is ___ tallest building in this city?
+A) the*
+B) a
+23. ___ more dangerous out trip is, ___ more I enjoy it.
+A) -, -
+B) The, the*
+C) The, -
+24. I came in and sat down on ___ chair which was the nearest to the door.
+A) the*
+B) a
+25. Do you take ___ sugar in your tea?
+A) -*
+B) the
+C) a`
 class EasyAns{
     constructor(quation,ansvers,rightAns){
         this.quation = quation;
@@ -34,7 +124,12 @@ class EasyAns{
     hide(divid){
         var divforAns = document.getElementById(divid);
         for (let index = 0; index < this.buttons.length; index++) {
-            divforAns.removeChild(this.buttons[index])            
+            try{
+                divforAns.removeChild(this.buttons[index])            
+            }
+            catch{
+
+            }
         }
     }
 }
@@ -132,6 +227,9 @@ function downloadFile(content = '') {
     URL.revokeObjectURL(link.href);
 };
 function playTest(){
+    easyQ = [];
+    easyA = [];
+    quationPlayId = 0
     var base = document.getElementById('tctext2').value;
     quationPlayId = 0;
     base = atob(base);
@@ -163,7 +261,9 @@ function setAns(btnid){
     easyA[quationPlayId].buttons[parseInt(easyA[quationPlayId].chosen)].style.color = 'white'
 }
 function runLeft() {
-    easyA[quationPlayId].hide('forAns');
+    for (let index = 0; index < easyA.length; index++) {
+        easyA[index].hide('forAns');
+    }
     if(quationPlayId > 0){
         quationPlayId -= 1;
     }
@@ -171,13 +271,18 @@ function runLeft() {
 
 }
 function runRight() {
-    easyA[quationPlayId].hide('forAns');
+    for (let index = 0; index < easyA.length; index++) {
+        easyA[index].hide('forAns');
+    }
     if(quationPlayId < easyA.length-1){
         quationPlayId += 1;
     }
     easyA[quationPlayId].show('playTestName','forAns');
 }
 function finish(){
+    for (let index = 0; index < easyA.length; index++) {
+        easyA[index].hide('forAns');
+    }
     PTd.style.display = 'none'
     var rightAns = 0;
     var wrongAns = 0;
@@ -203,4 +308,7 @@ for (var i = 0; i < ems.length; i++){
             TestCreator.style.display = 'flex'
         }
     }
+}
+function exempleT(){
+    tctext.value = exampleTest
 }
