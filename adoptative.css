@@ -48,3 +48,16 @@
         margin: 0px 0px 0px 5px;
     }
 }
+::-webkit-scrollbar{
+    cursor: none;
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+    background: #2aeb3a; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

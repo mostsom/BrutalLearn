@@ -6,12 +6,108 @@
     cursor: none;
     -webkit-user-drag: none;
 }
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#correct, #incorrect{
+    display: none;
+}
+.btnGc{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+button{
+    margin: 5px;
+    --clr:#0f0;
+    background:rgba(45,45,45,1);
+    padding: 10px 30px;
+    border-radius: 50px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    transition: 0.5s;
+}
+button:hover{
+    color:var(--clr);
+    text-shadow: 0 0 15px var(--clr);
+    border: 2px solid #0f0;
+}
+#incorrect:hover{
+    color:#f00;
+    text-shadow: 0 0 15px #f00;
+    border: 2px solid #f00;
+}
+#settingGroup{
+    display: none;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1000;
+    top: -40px;
+    width: 100%;
+    height: 600px;
+    overflow: auto;
+    background-color: rgb(39, 39, 39);
+}
+.optionsTestC{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+#PlayDialogGroup{
+    display: none;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1000;
+    top: -40px;
+    width: 100%;
+    height: 600px;
+    overflow: auto;
+    background-color: rgb(39, 39, 39);
+}
+#groupWork{
+    display: none;
+}
+#QuationBlockGroup{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+#QuationSoloBlock{
+    display: none;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+#quationsGroup{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+}
 #tctext3{
     font-size: 20px;
 }
 #Block button{
-    color: black;
-    padding: 10px;
     font-size: 30px;
 }
 #playTestName{
@@ -26,7 +122,6 @@
     flex-direction: column;
     position: fixed;
     z-index: 1000;
-    left: 0;
     top: -40px;
     width: 100%;
     height: 600px;
@@ -47,7 +142,7 @@
     flex-direction: row;
     align-content: center;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 #StatBlock{
     margin-left: 50px;
@@ -205,6 +300,7 @@ body{
 .bachGg{
     position: absolute;
     top: 0px;
+    left: 0px;
     width: 100%;
     height:100%;
     z-index: 1;
@@ -222,13 +318,17 @@ img {
 }
 
 .wrapper {
+    display: flex;
     background-color: #191D1A;
-    width: 100%;
+    width: 95vw;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
     width: 95vw;
-    margin: 0 auto;
 }
 
 header {
@@ -336,10 +436,10 @@ header nav ul li.log_reg:hover{
 }
 .hero--info{
     user-select: none;
-    width: 1251px;
+    width: 90%;
     height: 100px;
     display: flex;
-    margin-top: 50px;
+    margin-top: 20px;
     padding-bottom: 60px;
     flex-direction: column;
     align-items: center;
@@ -383,26 +483,24 @@ header nav ul li.log_reg:hover{
     transition: 1s;
 }
 .icon_arrow{
-    
     z-index: 1;
-    
     position: absolute;
-    margin-left: 120px;
-    margin-top: 3px;
+    margin-left: 135px;
+    margin-top: 8px;
     width: 31px;
     animation: enterLR 2s;
 }
 .icon_lang{
     position: absolute;
     width: 20px;
-    margin-top: 8px;
+    margin-top: 13px;
     margin-left: 10px;
     z-index: 1;
 }
 .icon_down{
     position: absolute;
     width: 20px;
-    margin-top: 8px;
+    margin-top: 13px;
     margin-left: -35px;
     z-index: 1;
 }

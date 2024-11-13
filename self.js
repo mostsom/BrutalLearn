@@ -22,7 +22,7 @@ window.onresize = () =>{
 }
 function adaptativeWindow() {
     try {
-        t.style.width = window.innerWidth*0.95+"px"
+        t.style.width = window.innerWidth*0.9+"px";
         s.style.width = window.innerWidth*0.9+"px";
     } catch (error) {
         

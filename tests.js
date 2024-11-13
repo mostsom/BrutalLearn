@@ -3,7 +3,12 @@ var quationPlayId = 0;
 var PTd = document.getElementById('PlayDialog');
 var quationName = document.getElementById('playTestName');
 var quationAnsversDiv = document.getElementById('forAns');
-var easyA = []
+var easyA = [];
+var Qdivs = [];
+var howmanyPlay = 0;
+var currentTeam = 0;
+var teamScore = [];
+var teamColor = ['rgba(80, 83, 255, 1)','rgba(248, 98, 98, 1)','rgba(44, 161, 40, 1)','rgba(202, 142, 29, 1)','rgba(105, 57, 1, 1)','rgba(37, 163, 153, 1)'];
 var exampleTest = `1. We looked up at all the stars in ___ sky.
 A) a
 B) -
@@ -101,6 +106,7 @@ class EasyAns{
         this.rightAns = rightAns;
         this.chosen = null;
         this.buttons = []
+        this.getGroup = 0;
         for (let index = 0; index < this.ansvers.length; index++) {
             var s = document.createElement('button')
             this.buttons.push(s);
@@ -131,6 +137,11 @@ class EasyAns{
 
             }
         }
+    }
+    showG(){
+        playGroupTestName.innerHTML = this.quation;
+        ansverGroup.innerHTML = this.ansvers[this.rightAns].slice(2).trim();
+        this.getGroup = 1
     }
 }
 class EasyQuation{
@@ -232,7 +243,11 @@ function playTest(){
     quationPlayId = 0
     var base = document.getElementById('tctext2').value;
     quationPlayId = 0;
-    base = atob(base);
+    try {
+        base = atob(base);
+    } catch (error) {
+        alert(error)
+    }
     console.log(base);
     var quations = base.split("\n")[0].split('$')
     var ansver = base.split("\n")[1].split('|')
@@ -254,8 +269,8 @@ function playTest(){
 function setAns(btnid){
     easyA[quationPlayId].chosen = btnid;
     for (let index = 0; index < easyA[quationPlayId].buttons.length; index++) {
-        easyA[quationPlayId].buttons[index].style.background = 'white'
-        easyA[quationPlayId].buttons[index].style.color = 'black'
+        easyA[quationPlayId].buttons[index].style.background = 'rgba(45,45,45,1)'
+        easyA[quationPlayId].buttons[index].style.color = '#fff'
     }
     easyA[quationPlayId].buttons[parseInt(easyA[quationPlayId].chosen)].style.background = 'green'
     easyA[quationPlayId].buttons[parseInt(easyA[quationPlayId].chosen)].style.color = 'white'
@@ -306,9 +321,154 @@ for (var i = 0; i < ems.length; i++){
         techs = techs.split(' ')
         if(techs[i] == '1'){
             TestCreator.style.display = 'flex'
+            groupWork.style.display = 'block'
         }
     }
 }
 function exempleT(){
     tctext.value = exampleTest
+}
+groupSize.onchange = () =>{
+    group_size_span.innerHTML = groupSize.value;
+    quationCardSize.setAttribute("min", groupSize.value)
+    quationCardSize.setAttribute("max", easyA.length-(easyA.length/groupSize.value-Math.round(easyA.length/groupSize.value))*groupSize.value)
+    quationCardSize.setAttribute("step", groupSize.value)
+    quation_size_span.innerHTML = quationCardSize.value;
+}
+quationCardSize.onchange = () =>{
+    quation_size_span.innerHTML = quationCardSize.value;
+
+}
+function playGroup() {
+    easyQ = [];
+    easyA = [];
+    quationPlayId = 0
+    var base = document.getElementById('tctext2').value;
+    quationPlayId = 0;
+    try {
+        base = atob(base);
+    } catch (error) {
+        alert("WRONG CODE")
+    }
+    console.log(base);
+    var quations = base.split("\n")[0].split('$')
+    var ansver = base.split("\n")[1].split('|')
+    var rightAns = base.split("\n")[2].split(' ')
+    var ansvers = []
+    quations.pop();
+    ansver.pop();
+    rightAns.pop();
+    for (var index = 0; index < ansver.length; index++) {
+        ansvers.push(ansver[index].split('#'))
+    }
+    console.log(ansvers)
+    for (var index = 0; index < quations.length; index++) {
+        easyA.push(new EasyAns(quations[index],ansvers[index],rightAns[index]));
+    }
+    settingGroup.style.display = 'flex';
+    quationCardSize.setAttribute("max", easyA.length-(easyA.length/groupSize.value-Math.round(easyA.length/groupSize.value))*groupSize.value)
+}
+function StartGroupPlay(){
+    Qdivs = [];
+    currentTeam = 0;
+    teamScore = []
+    gps = groupSize.value;
+    qcs = parseInt(quationCardSize.value);
+    howmanyPlay = gps;
+    for (let index = 0; index < gps; index++) {
+        teamScore.push(0)
+    }
+    settingGroup.style.display = 'none'
+    PlayDialogGroup.style.display = 'flex'
+    PlayDialogGroup.style.backgroundColor = teamColor[currentTeam];
+    for (let index = 0; index < qcs; index++) {
+        var tdiv = document.createElement('div')
+        tdiv.innerHTML = index+1
+        tdiv.id = index
+        tdiv.onclick = (e) =>{
+            showGsoloQuation(e.target.id);
+        }
+        tdiv.style.width = "250px"
+        tdiv.style.height = "120px"
+        tdiv.style.display = 'flex'
+        tdiv.style.borderRadius = '20px'
+        tdiv.style.justifyContent = 'center';
+        tdiv.style.alignItems = 'center';
+        tdiv.style.textAlign = 'center'
+        tdiv.style.background = 'rgba(20,20,20,0.7)'
+        tdiv.style.margin = '5px'
+        tdiv.style.border = '1px solid rgba(20,20,20,1)'
+        Qdivs.push(tdiv);
+    }
+    for (let index = 0; index < Qdivs.length; index++) {
+        quationsGroup.appendChild(Qdivs[index])
+    }
+}
+function showGsoloQuation(id) {
+    if(!easyA[id].getGroup){
+        QuationSoloBlock.style.display = 'flex';
+        QuationBlockGroup.style.display = 'none';
+        easyA[id].showG();
+    }
+}
+function CheckAnsG(){
+    ansverGroup.style.display = 'block';
+    checkBtn.style.display = 'none';
+    correct.style.display = 'block';
+    incorrect.style.display = 'block';
+}
+function BackAnsG(){
+    var temps = 0
+    PlayDialogGroup.style.backgroundColor = teamColor[currentTeam];
+    for (let index = 0; index < Qdivs.length; index++) {
+        if(easyA[index].getGroup){
+            Qdivs[index].innerHTML = '-'
+        }else{
+            temps = 1;
+            Qdivs[index].innerHTML = index+1
+        }
+    }
+    if(temps == 0){
+        PlayDialogGroup.style.display = 'none'
+        QuationSoloBlock.style.display = 'none';
+        QuationBlockGroup.style.display = 'flex';
+        ansverGroup.style.display = 'none';
+        checkBtn.style.display = 'block';
+        backBtn.style.display = 'none';
+        var finalText = ''
+        for (let index = 0; index < Qdivs.length; index++) {
+            quationsGroup.removeChild(Qdivs[index])
+        }
+        for (let index = 0; index < teamScore.length; index++) {
+            finalText += (index+1)+' Team: ' +teamScore[index] + '\n';
+        }
+        tctext3.value = finalText;
+    }else{
+        QuationSoloBlock.style.display = 'none';
+        QuationBlockGroup.style.display = 'flex';
+        ansverGroup.style.display = 'none';
+        checkBtn.style.display = 'block';
+        backBtn.style.display = 'none';
+    }
+}
+function cAns(){
+    teamScore[currentTeam] += 1;
+    correct.style.display = 'none';
+    incorrect.style.display = 'none';
+    backBtn.style.display = 'block';
+    if(currentTeam > howmanyPlay-2){
+        currentTeam = 0;
+    }else{
+        currentTeam += 1;
+    }
+}
+function incAns() {
+    correct.style.display = 'none';
+    incorrect.style.display = 'none';
+    backBtn.style.display = 'block';
+    if(currentTeam > howmanyPlay-2){
+        currentTeam = 0;
+    }else{
+        currentTeam += 1;
+    }
 }

@@ -43,15 +43,16 @@
                         <span id="testName">TestCreator</span>
                         <textarea class="tctext" id="tctext" cols="25" rows="10"></textarea>
                         <div class="optionsTestC">
-                            <button onclick="main()">Save</button>
-                            <button onclick="exempleT()">Example</button>
+                            <button onclick="main()" moh="true">Save</button>
+                            <button onclick="exempleT()" moh="true">Example</button>
                         </div>
                     </div>
                     <div id="TestBlock">
                         <span id="testName">PlayTest</span>
                         <textarea class="tctext" id="tctext2" cols="25" rows="10" placeholder="PUT HERE TEST CODE"></textarea>
                         <div class="optionsTestC">
-                            <button onclick="playTest()">Play</button>
+                            <button onclick="playTest()" moh="true">Play</button>
+                            <button id="groupWork" onclick="playGroup()" moh="true">GroupPlay</button>
                         </div>
                     </div>
                     <div id="PlayDialog">
@@ -65,11 +66,46 @@
                             <button class="finishBtn" onclick="finish()">FINISH</button>
                         </div>
                     </div>
+                    <div id="settingGroup">
+                        <div>
+                        <span>Group-Size</span>
+                        <span id="group_size_span">2</span>
+                        </div>
+                        <input type="range" id="groupSize" min="2" max="6" value="2">
+                        <div>
+                        <span>Quation-Size</span>
+                        <span id="quation_size_span"></span>
+                        </div>
+                        <input type="range" id="quationCardSize" value="2">
+                        <br>
+                        <button onclick="StartGroupPlay()" moh="true">START</button>
+                    </div>
+                    <div id="PlayDialogGroup">
+                        <div id="QuationBlockGroup">
+                            <div id="quationsGroup">
+
+                            </div>
+                            <div id="gruopCount">
+                                
+                            </div>
+                        </div>
+                        <div id="QuationSoloBlock">
+                            <span id="playGroupTestName" class="quationName">TestName</span>
+                            <span id="ansverGroup" style="display: none;"></span>
+                            <div class="btnGc">
+                                <button id="checkBtn" onclick="CheckAnsG()">Check</button>
+                                <button id="correct" onclick="cAns()">Correct</button>
+                                <button id="incorrect" onclick="incAns()" inc="true">Incorrect</button>
+                                <br>
+                                <button id="backBtn" onclick="BackAnsG()" style="display: none;">Back</button>
+                            </div>
+                        </div>
+                    </div>
                     <div id="StatBlock">
                         <span id="testName">STATS</span>
                         <textarea class="tctext" id="tctext3" cols="35" rows="16" disabled></textarea>
                         <div class="optionsTestC">
-                            <button>REFRESH</button>
+                            <button moh="true">REFRESH</button>
                         </div>
 
                     </div>

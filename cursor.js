@@ -28,6 +28,10 @@ document.addEventListener('mousemove',(event)=>{
     moX = event.x
     moY = event.y
     if(event.target.getAttribute('moh')){
+        AtomPT.style.backgroundColor = 'rgb(71,235,84)'
+        AtomPTS.style.backgroundColor = 'rgb(71,235,84)'
+        AtomC.style.border = '3px solid rgba(71,235,84,1)'
+        AtomC.style.filter = 'drop-shadow(0px 0px 5px rgba(71,235,84,1))';
         AtomC.style.transform = 'scale(2)'
         AtomPTS.style.transform = 'scale(0.2)'
 
@@ -38,7 +42,32 @@ document.addEventListener('mousemove',(event)=>{
         motterX = 5;
         motterY = 5;
         va = 0.3;
+    }else if(event.target.getAttribute('inc')){
+        AtomPT.style.backgroundColor = 'red'
+        AtomPTS.style.backgroundColor = 'red'
+        AtomC.style.border = '3px solid red'
+        AtomC.style.filter = 'drop-shadow(0px 0px 5px red)';
+
+        AtomC.style.transform = 'scale(1)'
+        
+        AtomPTS.style.transform = 'scale(1)'
+
+        AtomC.style.left = event.x-25+"px";
+        AtomC.style.top = window.scrollY+event.y-25+"px";
+        AtomPTS.style.left = 15+"px";
+	    AtomPTS.style.top = 15+"px";
+        motterX = 1;
+        motterY = 1;
+        AtomMx = 20;
+        AtomMy = 20;
+        AtomVx = 27;
+        AtomVy = 27;
+        va = 0.1;
     }else{
+        AtomPTS.style.backgroundColor = 'rgb(71,235,84)'
+        AtomPT.style.backgroundColor = 'rgb(71,235,84)'
+        AtomC.style.border = '3px solid rgba(71,235,84,1)'
+        AtomC.style.filter = 'drop-shadow(0px 0px 5px rgba(71,235,84,1))';
         AtomC.style.transform = 'scale(1)'
         
         AtomPTS.style.transform = 'scale(1)'
